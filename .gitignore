@@ -28,3 +28,4 @@
 /.nb-gradle/
 
 .DS_Store
+.gradle
