@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -120,79 +119,6 @@ public class A_Lambdas {
             "fairest", "glutton", "thereby", "increase", "ornament",
             "abundance", "creatures", "contracted", "niggarding",
             "substantial"));
-  }
-
-// Exercise 10: Categorize the words into a map, where the map's key is
-// the length of each word, and the value corresponding to a key is a
-// list of words of that length. Don't bother with uniqueness or lower-
-// casing the words.
-
-  @Test
-  @Ignore
-  public void mapLengthToWordList() throws IOException {
-    Map<Integer, List<String>> map = null; /* TODO */
-
-    assertThat(map.get(7).size())
-        .isEqualTo(6);
-    assertThat(map.get(8))
-        .isEqualTo(Arrays.asList("increase", "ornament"));
-    assertThat(map.get(9))
-        .isEqualTo(Arrays.asList("creatures", "abundance"));
-    assertThat(map.get(10))
-        .isEqualTo(Arrays.asList("contracted", "niggarding"));
-    assertThat(map.get(11))
-        .isEqualTo(Arrays.asList("substantial"));
-    assertThat(map.containsKey(12))
-        .isFalse();
-  }
-
-// Exercise 11: Gather the words into a map, accumulating a count of the
-// number of occurrences of each word. Don't worry about upper case and
-// lower case. Extra challenge: implement two solutions, one that uses
-// groupingBy() and the other that uses toMap().
-
-  @Test
-  @Ignore
-  public void wordFrequencies() throws IOException {
-    Map<String, Long> map = null; /* TODO */
-
-    assertThat((long) map.get("tender"))
-        .isEqualTo(2L);
-    assertThat((long) map.get("the"))
-        .isEqualTo(6L);
-    assertThat((long) map.get("churl"))
-        .isEqualTo(1L);
-    assertThat((long) map.get("thine"))
-        .isEqualTo(2L);
-    assertThat((long) map.get("world"))
-        .isEqualTo(3L);
-    assertThat(map.containsKey("lambda"))
-        .isFalse();
-  }
-
-// Exercise 12: Create nested maps, where the outer map is a map from the
-// first letter of the word to an inner map. (Use a string of length one
-// as the key.) The inner map, in turn, is a mapping from the length of the
-// word to a list of words with that length. Don't bother with any lowercasing
-// or uniquifying of the words.
-//
-// For example, given the words "foo bar baz bazz" the string
-// representation of the result would be:
-//     {f={3=[foo]}, b={3=[bar, baz], 4=[bazz]}}.
-
-  @Test
-  @Ignore
-  public void nestedMaps() throws IOException {
-    Map<String, Map<Integer, List<String>>> map = null; /* TODO */
-
-    assertThat(map.get("F").get(4).toString())
-        .isEqualTo("[From, Feed]");
-    assertThat(map.get("b").get(2).toString())
-        .isEqualTo("[by, be, by]");
-    assertThat(map.get("t").get(3).toString())
-        .isEqualTo("[the, thy, thy, thy, too, the, the, thy, the, the, the]");
-    assertThat(map.get("b").get(6).toString())
-        .isEqualTo("[beauty, bright]");
   }
 
 }
